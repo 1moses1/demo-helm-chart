@@ -1,5 +1,5 @@
 # Number of NGINX application replicas to deploy
-replicaCount: 2
+replicaCount: 3
 
 # Docker image configuration
 image:
