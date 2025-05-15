@@ -1,0 +1,12 @@
+apiVersion: v2                   # Helm chart API version (v2 is required for Helm 3+)
+name: demo-app                   # The name of the chart; usually matches the folder name
+description: A simple Helm chart for deploying a demo web application.
+                                 # A human-readable description of what this chart does
+
+type: application                # Indicates this is an 'application' chart (not a library chart)
+
+version: 0.1.0                   # Helm chart version (semver); used for chart releases/upgrades
+                                 # Increment this version whenever you make changes to the chart itself
+
+appVersion: "1.0.0"              # The version of the app you're deploying (e.g., image tag)
+                                 # Not used by Helm directly, but often displayed in UIs or by tools like Argo CD

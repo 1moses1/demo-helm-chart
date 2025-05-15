@@ -1,0 +1,22 @@
+# Number of NGINX application replicas to deploy
+replicaCount: 2
+
+# Docker image configuration
+image:
+  repository: nginx         # Use the official NGINX image
+  tag: stable               # Use the 'stable' tag
+  pullPolicy: IfNotPresent  # Only pull the image if not already cached locally
+
+# Kubernetes service configuration
+service:
+  type: ClusterIP           # Exposes service on an internal cluster IP
+  port: 80                  # Port the service listens on
+
+# Resource requests and limits for the container
+resources:
+  limits:
+    cpu: "300m"             # Max CPU usage allowed: 0.3 cores
+    memory: "256Mi"         # Max memory usage allowed: 256 MiB
+  requests:
+    cpu: "100m"             # Minimum CPU required: 0.1 cores
+    memory: "128Mi"         # Minimum memory required: 128 MiB
