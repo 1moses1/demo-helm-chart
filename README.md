@@ -17,7 +17,7 @@ The goal of this repository is to:
 ## 📁 Repository Structure
 
 ```
-demo-helm-chart/
+nginx-helm-chart/
 ├── Chart.yaml
 ├── values.yaml
 └── templates/
