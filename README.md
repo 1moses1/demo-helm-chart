@@ -23,6 +23,8 @@ nginx-helm-chart/
 └── templates/
     ├── deployment.yaml
     ├── service.yaml
+    ├── hpa.yaml
+    ├── serviceaccount.yaml
     ├── _helpers.tpl
     └── NOTES.txt
 ```
@@ -45,10 +47,18 @@ Contains the default configuration values for the Helm chart:
 Holds all the templated Kubernetes manifests that are rendered using Helm.
 
 #### `deployment.yaml`
-Defines the `Deployment` object that launches the NGINX pods.
+Defines the `Deployment` object that launches the NGINX pods and includes:
+- Liveness and readiness probes
+- Service account usage
 
 #### `service.yaml`
 Defines the `Service` object that exposes the NGINX app internally within the cluster.
+
+#### `hpa.yaml`
+Defines a `HorizontalPodAutoscaler` resource for autoscaling based on CPU.
+
+#### `serviceaccount.yaml`
+Creates a `ServiceAccount` bound to the pod for secure access control.
 
 #### `_helpers.tpl`
 Contains reusable Helm template functions for naming and labeling Kubernetes objects.
@@ -72,6 +82,7 @@ Optional helper text displayed to users after chart installation.
 - Verified Argo CD GitOps flow with real-time auto-sync.
 - Web app confirmed running and accessible via port-forward.
 - Demonstrated custom chart templating and live cluster deployment.
+- Implemented HPA, probes, and service account to meet production-readiness best practices.
 
 ---
 
