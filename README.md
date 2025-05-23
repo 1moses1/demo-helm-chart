@@ -1,4 +1,4 @@
-# demo-helm-chart
+# nginx-helm-chart
 
 This repository contains a custom **Helm chart** designed to deploy a simple NGINX web application using **GitOps principles** through **Argo CD**. It was created as part of the **Irembo DevOps Internship** to fulfill the Continuous Deployment with Argo CD assignment.
 
