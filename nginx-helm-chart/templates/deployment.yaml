@@ -23,3 +23,18 @@ spec:
             - containerPort: 80
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+
+      serviceAccountName: {{ include "demo-app.serviceAccountName" . }}  # Service account for the pod
+      
